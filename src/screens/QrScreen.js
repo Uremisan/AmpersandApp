@@ -3,8 +3,10 @@ import { StyleSheet, Text, View, TouchableOpacity, Image, ScrollView, SafeAreaVi
 import { QRCode } from 'react-native-custom-qr-codes-expo';
 
 
-const QrScreen = () => {
-
+const QrScreen = ({ navigation }) => {
+  const handleOnPress = () => {
+    navigation.navigate ('Scan')
+  };
   return (
     <SafeAreaView style={styles.container}>
       <ScrollView style={styles.maincontainer}>
@@ -43,7 +45,7 @@ const QrScreen = () => {
         <View style={styles.line}></View>
         <View style={styles.under}>
           <Text style={styles.txt5}>Want to add a new connection?</Text>
-            <TouchableOpacity style={styles.button}>
+            <TouchableOpacity onPress={handleOnPress}  style={styles.button}>
               <Text style={styles.buttonText}>Scan QR</Text>
             </TouchableOpacity>
         </View>

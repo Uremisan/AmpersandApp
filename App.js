@@ -11,23 +11,25 @@ import WelcomeScreen2 from './src/screens/WelcomeScreen2';
 import Myprofile from './src/screens/Myprofile';
 import MemberProfile from './src/screens/MemberProfile';
 
+import {NavigationContainer} from '@react-navigation/native'
+
+import { createStackNavigator} from "@react-navigation/stack"
+
+const Stack = createStackNavigator ();
+
 export default function App() {
   return (
-    <View style={styles.container}>
-      {/* <WelcomeScreen1 /> */}
-      {/* <WelcomeScreen2 /> */}
-      {/* <SignScreen /> */}
-      {/* <RegisterScreen /> */}
-      {/* <ImagePicker /> */}
-      {/* <QrScreen /> */}
-      {/* <QrcodeScanner /> */}
-      {/* <Myprofile /> */}
-      <MemberProfile />
-      
-      
-      
-      <StatusBar style="auto" />
-    </View>
+    <NavigationContainer>
+      <Stack.Navigator>
+        <Stack.Screen options={{ header: () => null }} name="Home" component={WelcomeScreen1}/>
+        <Stack.Screen options={{ header: () => null }}name="GetStarted" component={WelcomeScreen2} />
+        <Stack.Screen name="Sign Up"
+        component={RegisterScreen}/>
+        <Stack.Screen name="Sign In" component={SignScreen}/>
+        <Stack.Screen name="Ampersand" component={QrScreen}/>
+        <Stack.Screen name="Scan" component={QrcodeScanner}/>
+      </Stack.Navigator>
+    </NavigationContainer>
   );
 }
 

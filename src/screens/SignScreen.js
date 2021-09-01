@@ -1,7 +1,10 @@
 import React from 'react'
 import { StyleSheet, Text, View, Image, TouchableOpacity, ScrollView, TextInput } from 'react-native'
 
-const SignScreen = () => {
+const SignScreen = ({ navigation }) => {
+  const handleOnPress = () => {
+    navigation.navigate ('Ampersand')
+  };
   return (
     <ScrollView style={styles.container}>
       <View style={styles.maincontainer}>
@@ -25,7 +28,7 @@ const SignScreen = () => {
             </TextInput>
           </View>
           <View>
-            <TouchableOpacity style={styles.button}>
+            <TouchableOpacity onPress={handleOnPress} style={styles.button}>
               <Text style={styles.buttonText}>SIGN IN</Text>
             </TouchableOpacity>
           </View>

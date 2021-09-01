@@ -1,7 +1,12 @@
 import React from 'react'
 import { StyleSheet, Text, View, ScrollView, TouchableOpacity, Image, TextInput  } from 'react-native'
 
-const WelcomeScreen1 = () => {
+const WelcomeScreen1 = ({ navigation }) => {
+
+  const handleOnPress = () => {
+    navigation.navigate ('GetStarted')
+  };
+
   return (
     <ScrollView style={styles.container}>
       <View style={styles.maincontainer}>
@@ -19,7 +24,7 @@ const WelcomeScreen1 = () => {
           
 
           <View style={styles.touch}>
-            <TouchableOpacity style={styles.touchopa}>
+            <TouchableOpacity onPress={handleOnPress} style={styles.touchopa}>
             <Text style={styles.touchtxt}>GET STARTED</Text>
 
             <View style={styles.line}>

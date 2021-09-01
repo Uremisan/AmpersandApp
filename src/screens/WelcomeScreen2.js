@@ -1,7 +1,14 @@
 import React from 'react'
 import { StyleSheet, Text, View, ScrollView, TouchableOpacity, Image } from 'react-native'
 
-const WelcomeScreen2 = () => {
+const WelcomeScreen2 = ({ navigation}) => {
+  const handleOnPress = () => {
+    navigation.navigate ('Sign Up')
+  };
+  const handleSignIn = () => {
+    navigation.navigate ('Sign In')
+  };
+
   return (
     <ScrollView style={styles.container}>
 
@@ -27,12 +34,12 @@ const WelcomeScreen2 = () => {
 
         <View style={styles.navcontainer}>
           <View style={styles.tch}>
-            <TouchableOpacity style={styles.tch1}>
+            <TouchableOpacity onPress={handleOnPress} style={styles.tch1}>
               <Text style={styles.tchtext1}>REGISTER</Text>
               <View style={styles.line}>
               </View>
             </TouchableOpacity>
-            <TouchableOpacity style={styles.tch2}>
+            <TouchableOpacity onPress={handleSignIn}  style={styles.tch2}>
             <Text style={styles.tchtext2}>SIGN IN</Text>
               <View style={styles.line}>
               </View>
