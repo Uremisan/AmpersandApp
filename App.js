@@ -6,6 +6,10 @@ import SignScreen from './src/screens/SignScreen';
 import WelcomeScreen1 from './src/screens/WelcomeScreen1';
 import ImagePicker from './src/screens/ImagePicker';
 import QrScreen from './src/screens/QrScreen';
+import QrcodeScanner from './src/screens/QrcodeScanner';
+import WelcomeScreen2 from './src/screens/WelcomeScreen2';
+import Myprofile from './src/screens/Myprofile';
+import MemberProfile from './src/screens/MemberProfile';
 
 export default function App() {
   return (
@@ -15,7 +19,11 @@ export default function App() {
       {/* <SignScreen /> */}
       {/* <RegisterScreen /> */}
       {/* <ImagePicker /> */}
-      <QrScreen />
+      {/* <QrScreen /> */}
+      {/* <QrcodeScanner /> */}
+      {/* <Myprofile /> */}
+      <MemberProfile />
+      
       
       
       <StatusBar style="auto" />
