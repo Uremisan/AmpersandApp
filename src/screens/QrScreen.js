@@ -41,7 +41,7 @@ const QrScreen = ({ navigation }) => {
         </View>
 
         
-      <View>
+      <View style={styles.lncontainer}>
         <View style={styles.line}></View>
         <View style={styles.under}>
           <Text style={styles.txt5}>Want to add a new connection?</Text>
@@ -82,7 +82,7 @@ const styles = StyleSheet.create({
     marginLeft: 10,
   },
   imageContainer: {
-    marginTop: 55,
+    marginTop: 75,
     flex: 0.3,
     alignSelf:'flex-start',
     flexDirection: 'row',
@@ -104,6 +104,9 @@ image: {
     marginTop: 5,
     fontFamily:'Kailasa',
     color: 'grey',
+  },
+  lncontainer:{
+    marginTop: 40,
   },
   line:{
     borderBottomWidth: 0.3,
