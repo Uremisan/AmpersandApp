@@ -33,8 +33,8 @@ export default function ImagePickerExample({setImage}) {
   };
 
   return (
-    <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
-      <TouchableOpacity  title="Pick an image from camera roll" onPress={pickImage}>
+    <View >
+      <TouchableOpacity style={{  alignItems: 'center', justifyContent: 'center' }}  title="Pick an image from camera roll" onPress={pickImage}>
       <AntDesign name="user" size={80} color="red" alignItems="center" justifyContent='center' />
       <Text style={styles.txt}>ADD PROFILE PHOTO</Text>
       </TouchableOpacity>
@@ -45,7 +45,6 @@ export default function ImagePickerExample({setImage}) {
 
 const styles = StyleSheet.create ({
   txt:{
-    marginTop: 10,
     alignItems: 'center',
     justifyContent: 'center',
     color: 'red',

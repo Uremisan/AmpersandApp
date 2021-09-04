@@ -1,13 +1,17 @@
 import React from 'react'
-import { StyleSheet, Text, View, Image, TouchableOpacity, ScrollView, TextInput } from 'react-native'
+import { StyleSheet, Text, View, Image, TouchableOpacity, ScrollView, TextInput, SafeAreaView, KeyboardAvoidingView, Platform, TouchableWithoutFeedback, Keyboard } from 'react-native'
 
 const SignScreen = ({ navigation }) => {
   const handleOnPress = () => {
     navigation.navigate ('Ampersand')
   };
   return (
+    <KeyboardAvoidingView behavior= 'height'
+    style={styles.container}>
+    <TouchableWithoutFeedback onPress={Keyboard.dismiss}>
     <ScrollView style={styles.container}>
-      <View style={styles.maincontainer}>
+
+        <View style={styles.maincontainer}>
 
         <View style={styles.Imagecontainer}>
           <Image style={styles.Image}          source ={require('../../assets/l2.jpg')}>
@@ -17,14 +21,14 @@ const SignScreen = ({ navigation }) => {
         <View style={styles.textcontainer}>
           <View style={styles.tch}>
             <Text style={styles.txt1}>Email</Text>
-            <TextInput placeholder = 'Enter your email' style={styles.input}>
+            <TextInput textAlign={"right"} placeholder = 'Enter your email' style={styles.input}>
             </TextInput>
           </View>
           <View style={styles.line}></View>
 
           <View style={styles.tch2}>
             <Text style={styles.txt1}>Password</Text>
-            <TextInput placeholder = 'Enter Password' style={styles.input}>
+            <TextInput textAlign={"right"} placeholder = 'Enter Password' style={styles.input}>
             </TextInput>
           </View>
           <View>
@@ -46,9 +50,11 @@ const SignScreen = ({ navigation }) => {
         </View>
 
 
+        </View>
 
-      </View>
     </ScrollView>
+    </TouchableWithoutFeedback>
+    </KeyboardAvoidingView>
   )
 }
 
@@ -79,6 +85,9 @@ const styles = StyleSheet.create({
   // },
   txt1:{
     fontSize: 20,
+  },
+  input:{
+    flex: 1,
   },
   line:{
     borderBottomWidth: 0.3,

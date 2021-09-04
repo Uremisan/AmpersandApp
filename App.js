@@ -30,9 +30,11 @@ export default function  App() {
 					headerTitleStyle: {
 						color: 'white',
 					},
+          headerTintColor:'white',
+          
 				}} >
         <Stack.Screen options={{ header: () => null }} name="Home" component={WelcomeScreen1}/>
-        <Stack.Screen options={{ header: () => null }}name="GetStarted" component={WelcomeScreen2} />
+        <Stack.Screen options={{ header: () => null }}name="GetStarted" headerti component={WelcomeScreen2} />
 
         <Stack.Screen options={{
           title:'Sign Up',
@@ -73,10 +75,13 @@ export default function  App() {
               },
           };
         }}name="Ampersand" component={QrScreen}/>
-        <Stack.Screen name="Scan" component={QrcodeScanner}/>
+        <Stack.Screen options={{ header: () => null }} name="Scan" component={QrcodeScanner}/>
         <Stack.Screen options={{
           title:'My Profile',
         }}name="myprofile" component={Myprofile}/>
+        <Stack.Screen options={{
+          title:'Member Profile',
+        }} name="memberprofile" component={MemberProfile}/>
       </Stack.Navigator>
     </NavigationContainer>
   );
